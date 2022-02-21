@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bgd-app
+  namespace: test-argo
+spec:
+  destination:
+    namespace: test-argo
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: apps/bgd/overlays/bgd
+    repoURL: https://github.com/redhat-developer-demos/openshift-gitops-examples
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=true

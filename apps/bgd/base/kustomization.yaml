@@ -1,0 +1,5 @@
+namespace: test-argo
+resources:
+- bgd-svc.yaml
+- bgd-deployment.yaml
+- bgd-route.yaml
