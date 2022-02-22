@@ -18,6 +18,8 @@ spec:
       labels:
         app: bgd
     spec:
+      imagePullSecrets:
+      - name: dockerhub
       containers:
       - image: quay.io/redhatworkshops/bgd:latest
         name: bgd
